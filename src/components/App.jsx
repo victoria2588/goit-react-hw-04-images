@@ -23,7 +23,7 @@ export const App = () => {
         const { hits: img, totalHits } = await fetchImages(query, page);
 
         if (img.length) {
-          setImages(prevImages => (page > 1 ? [...images, ...img] : img));
+          setImages(prevImages => (page > 1 ? [...prevImages, ...img] : img));
           setTotalImages(totalHits);
           setLoading(false);
         } else {
